@@ -14,6 +14,7 @@ const uri = process.env.MONGO_URI;
 
 async function main(){
     try {
+        console.log(process.env.MONGO_URI)
         await openDBConnection(uri)
         const app = express()
         app.use(express.json())
