@@ -1,10 +1,8 @@
 const express = require("express")
 const dotenv = require("dotenv")
-const mongoose = require("mongoose")
-
 dotenv.config() //ini harus buat process.env
 
-// const openDBConnection = require("./helpers/db")
+const openDBConnection = require("./helpers/db")
 const instructors = require("./routers/instructors")
 const courses = require("./routers/courses")
 const participants = require("./routers/participants")
@@ -17,8 +15,7 @@ const uri = process.env.MONGO_URI;
 async function main(){
     try {
         console.log(process.env.MONGO_URI)
-        // await openDBConnection(uri)
-        mongoose.connect(uri)
+        await openDBConnection(uri)
         const app = express()
         app.use(express.json())
         app.use(express.urlencoded({ extended: true }));
