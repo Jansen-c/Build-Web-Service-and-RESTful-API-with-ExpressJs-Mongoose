@@ -1,6 +1,9 @@
 const express = require("express")
 const dotenv = require("dotenv")
 dotenv.config() //ini harus buat process.env
+//btw itu kan env ga ikut ke heroku, harus di set manual di heroku di Config Vars nya diisi MONGO_URI = ... 
+//file env kita itu gakan ikut dipush ke git push heroku main soalnya makanya gabisa bisa daritadi.
+
 
 const openDBConnection = require("./helpers/db")
 const instructors = require("./routers/instructors")
