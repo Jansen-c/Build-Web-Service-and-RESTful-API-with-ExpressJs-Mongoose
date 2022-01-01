@@ -15,7 +15,6 @@ const uri = process.env.MONGO_URI;
 async function main(){
     try {
         await openDBConnection(uri)
-
         const app = express()
         app.use(express.json())
         app.use(express.urlencoded({ extended: true }));
