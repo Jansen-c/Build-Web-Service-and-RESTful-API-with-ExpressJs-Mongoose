@@ -9,8 +9,8 @@ const participants = require("./routers/participants")
 
 
 
-const port = process.env.PORT || 3000
-const uri = process.env.MONGO_URI
+const port = process.env.PORT || 5000;
+const uri = process.env.MONGO_URI;
 
 async function main(){
     try {
@@ -23,7 +23,6 @@ async function main(){
         app.use(courses)
         app.use(participants)
     
-
         app.listen(port, ()=>{
             console.log(`listening at http://localhost:${port}`)
         })
