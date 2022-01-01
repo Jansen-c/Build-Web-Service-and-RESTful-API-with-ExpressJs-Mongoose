@@ -15,7 +15,8 @@ const uri = process.env.MONGO_URI;
 async function main(){
     try {
         console.log(process.env.MONGO_URI)
-        await openDBConnection(uri)
+        // await openDBConnection(uri)
+        await mongoose.connect(uri, { useNewUrlParser: true })
         const app = express()
         app.use(express.json())
         app.use(express.urlencoded({ extended: true }));
