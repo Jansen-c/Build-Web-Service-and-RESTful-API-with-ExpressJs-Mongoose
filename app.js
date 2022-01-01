@@ -1,5 +1,7 @@
 const express = require("express")
 const dotenv = require("dotenv")
+const mongoose = require("mongoose")
+
 dotenv.config() //ini harus buat process.env
 
 const openDBConnection = require("./helpers/db")
